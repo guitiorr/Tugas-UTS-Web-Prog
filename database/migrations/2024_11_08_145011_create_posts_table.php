@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->foreignId('author_id')->constrained(
+                table: 'users', indexName: 'posts_author_id'
+            );
         });
     }
 
