@@ -18,8 +18,6 @@ class PostFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'author' => fake()->name(),
-            'category' => fake()->name()
         ];
     }
 }
