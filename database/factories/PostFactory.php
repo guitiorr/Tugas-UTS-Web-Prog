@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,7 +20,9 @@ class PostFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'body' => fake()->sentence(),
             'author_id' => User::factory(),
+            'category_id' => Category::factory(),
         ];
     }
 }
