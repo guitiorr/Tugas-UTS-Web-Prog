@@ -23,8 +23,11 @@
     </div>
 
     <div class="mt-4">
-        {{ $posts->links() }}
+        <ul class="pagination justify-content-center">
+            {{ $posts->links('pagination::bootstrap-4') }}
+        </ul>
     </div>
+
 
 
 </body>
