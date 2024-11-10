@@ -23,7 +23,15 @@ class PostController extends Controller
         return view('main-page', ['posts' => $posts->paginate(5), 'categories' => $category]);
     }
 
+    public function postFilterCategory(){
+        $posts = Post::latest();
 
+        $posts = $posts->where('category_id', 'like', '%' . request('category') . '%');
+
+        $category = Category::all();
+
+        return view('main-page', ['posts' => $posts->paginate(5), 'categories' => $category]);
+    }
 
     /**
      * Store a newly created resource in storage.

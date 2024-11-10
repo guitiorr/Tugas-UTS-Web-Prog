@@ -18,7 +18,7 @@
             </a>
             <ul class="dropdown-menu">
                 @foreach ($categories as $category)
-                    <li class="dropdown-item" href="/posts/categories/{{ $category->name }}">{{ $category->name }}</li>
+                    <a class="dropdown-item" href="/posts/category/{{ $category->id }}">{{ $category->name }}</a>
                 @endforeach
             </ul>
           </li>

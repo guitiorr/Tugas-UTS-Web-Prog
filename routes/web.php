@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PostController::class, 'index']);
 
 Route::get('/post/{post:id}', [PostController::class, 'show']);
+
+Route::get('/posts/category/{category:id}', [PostController::class, 'postFilterCategory']);
