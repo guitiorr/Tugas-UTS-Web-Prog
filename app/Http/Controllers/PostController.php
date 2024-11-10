@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class MainPageController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class MainPageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(POst $pOst)
     {
         //
     }
@@ -35,7 +35,7 @@ class MainPageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, POst $pOst)
     {
         //
     }
@@ -43,7 +43,7 @@ class MainPageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(POst $pOst)
     {
         //
     }
