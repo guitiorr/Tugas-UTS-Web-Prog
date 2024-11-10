@@ -14,11 +14,15 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(5);
+        $posts = Post::latest();
+
+        $posts = $posts->where('title', 'like', '%' . request('search') . '%');
+
         $category = Category::all();
 
-        return view('main-page', ['posts' => $posts, 'categories' => $category]);
+        return view('main-page', ['posts' => $posts->paginate(5), 'categories' => $category]);
     }
+
 
 
     /**

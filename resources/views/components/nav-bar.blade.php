@@ -22,11 +22,8 @@
                 @endforeach
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
         </ul>
-        <form action="/posts" class="d-flex" role="search" method="GET">
+        <form action="/" class="d-flex" role="search" method="GET">
             @csrf
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
           <button class="btn btn-outline-success" type="submit">Search</button>
