@@ -13,7 +13,7 @@ class PostController extends Controller
     public function index()
     {
         $post = Post::all();
-        return view('main-page', ['posts' => $post]);
+        return view('main-page', ['posts' => $post->paginate(6)]);
     }
 
     /**
@@ -27,7 +27,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(POst $pOst)
+    public function show(Post $post)
     {
         //
     }
@@ -35,7 +35,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, POst $pOst)
+    public function update(Request $request, Post $post)
     {
         //
     }
@@ -43,7 +43,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(POst $pOst)
+    public function destroy(Post $post)
     {
         //
     }
