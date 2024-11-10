@@ -19,6 +19,9 @@
             <div class="col-span-1 text-center border-b border-gray-300 p-2">
                 {{ $post->body }}
             </div>
+            <div class="col-span-1 text-center border-b border-gray-300 p-2">
+                Category: {{ $post->category->name }}
+            </div>
         @endforeach
     </div>
 
