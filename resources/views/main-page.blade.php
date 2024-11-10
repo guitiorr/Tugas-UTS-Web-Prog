@@ -10,13 +10,18 @@
 <body>
     <x-nav-bar></x-nav-bar>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    {{ $posts->links() }}
-    @foreach ($posts as $post)
-    <div class="grid text-center">
-        <div class="g-col-4">.g-col-4</div>
-        <div class="g-col-4">.g-col-4</div>
-        <div class="g-col-4">.g-col-4</div>
-      </div>
-    @endforeach
+
+    <div class="grid grid-cols-2 gap-4 border border-black p-4">
+        @foreach ($posts as $post)
+            <div class="col-span-1 text-center border-b border-gray-300 p-2">
+                <a href="/post/{{ $post->id }}">{{ $post->title }}</a>
+            </div>
+            <div class="col-span-1 text-center border-b border-gray-300 p-2">
+                {{ $post->body }}
+            </div>
+        @endforeach
+    </div>
+
+
 </body>
 </html>

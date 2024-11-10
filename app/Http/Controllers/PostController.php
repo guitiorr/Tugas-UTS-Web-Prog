@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class PostController extends Controller
 {
@@ -12,9 +13,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::all();
-        return view('main-page', ['posts' => $post->paginate(6)]);
+        $posts = Post::paginate(5);
+
+        return view('main-page', ['posts' => $posts]);
     }
+
 
     /**
      * Store a newly created resource in storage.
