@@ -13,7 +13,9 @@ class Post extends Model
 
     protected $fillable = [
         'name',
+        'body',
         'author_id',
+        'category_id',
     ];
 
     protected $with = ['user'];
