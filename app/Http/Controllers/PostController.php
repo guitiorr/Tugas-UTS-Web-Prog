@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
@@ -14,8 +15,9 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::paginate(5);
+        $category = Category::all();
 
-        return view('main-page', ['posts' => $posts]);
+        return view('main-page', ['posts' => $posts, 'categories' => $category]);
     }
 
 
